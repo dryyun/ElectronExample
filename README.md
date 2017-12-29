@@ -3,7 +3,7 @@
 A example of learning electron
 
 
-###简易打包
+### 简易打包
 
 使用 [electron-packager](https://github.com/electron-userland/electron-packager)
 
