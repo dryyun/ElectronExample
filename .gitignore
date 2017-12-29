@@ -1,4 +1,4 @@
 node_modules
 .idea
 *-darwin-x64/
-
+*.dmg
