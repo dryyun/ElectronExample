@@ -7,15 +7,24 @@
   <body>
     <h1>Electron Example</h1>
 
-    <h2>Version : <script>document.write(require('../package.json').version)</script> </h2>
     <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <p>
+        We are using Node.js <script>document.write(process.versions.node)</script>,
+        Chromium <script>document.write(process.versions.chrome)</script>,
+        and Electron <script>document.write(process.versions.electron)</script>.
+    </p>
+
+    <h2>Version : <script>document.write(require('../package.json').version)</script> </h2>
+
+    <h2 id="memoryUsed">Memory Used : <script>document.write(process.getProcessMemoryInfo().workingSetSize/1000)</script> M </h2>
+
+    <h2 id="screen" hidden>Screen width: wwww，height: hhhh </h2>
 
     <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
+        $ = require('jquery')
+
+        require('./renderer.js')
+
     </script>
   </body>
 </html>
