@@ -3,6 +3,7 @@ const windowStateKeeper = require('electron-window-state');
 
 const mainWindow = require('./app/mainWindow.js');
 const menu = require('./app/menu.js')
+const notification = require('./app/notification.js')
 
 const {app, Menu} = electron;
 
@@ -27,13 +28,13 @@ app.on('ready', function () {
 
     _mainWindowState.manage(_mainWindow.win);
     Menu.setApplicationMenu(menu)
+
+    notification({title: 'App', body: 'Ready'})
 });
 
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {
         app.quit()
-    } else {
-        _mainWindowState.saveState(_mainWindow)
     }
 })
 
@@ -46,5 +47,6 @@ app.on('activate', function () {
             'height': _mainWindowState.height
         });
         _mainWindowState.manage(_mainWindow.win);
+        notification({title: 'App', body: 'Activate'})
     }
 })
