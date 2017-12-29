@@ -12,8 +12,33 @@ const electron = require('electron');
     }, 2000)
 })();
 
+// 获取屏幕尺寸
 (function () {
     let display = electron.screen.getPrimaryDisplay();
-    $('#screen')[0].innerHTML = `Screen width: ${display.size.width}，height: ${display.size.height}`
-    $('#screen').show();
+
+    let h2 = document.createElement('h2');
+    let text = document.createTextNode(`Screen width: ${display.size.width}，height: ${display.size.height}`)
+    h2.appendChild(text)
+
+    document.body.appendChild(h2)
+
+})();
+
+
+// 获取用户 IP
+(function () {
+    let ipUrl = 'http://ip.chinaz.com/getip.aspx';
+    require('axios').get(ipUrl)
+        .then(function (response) {
+            let ip  = response.data;
+            ip = ip.replace(/['|{|}|,]/g,' ')
+            console.log(ip)
+            let h2 = document.createElement('h2');
+            let text = document.createTextNode(`${ip}`)
+            h2.appendChild(text)
+            document.body.appendChild(h2)
+        })
+        .catch(function (error) {
+            // console.log(error);
+        });
 })();
