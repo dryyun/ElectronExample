@@ -28,5 +28,6 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
     if (_mainWindow.win === null) {
         _mainWindow.createWindow();
+        notification({title: 'App', body: 'Activate'})
     }
 })
