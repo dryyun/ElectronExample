@@ -1,20 +1,23 @@
 {
   "name": "ElectronExample",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Electron Example",
   "main": "main.js",
   "scripts": {
     "dev": "NODE_ENV=development  electron .",
     "product": "NODE_ENV=production  electron .",
     "build-mac": "CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder -m",
-    "build-win": "electron-builder -w"
+    "build-win": "electron-builder -w",
+    "publish-mac": "GH_TOKEN=`cat private/GH_TOKEN.txt` CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder build -m -p 'onTagOrDraft' "
   },
   "build": {
     "directories": {
       "output": "dist"
     },
     "mac": {
-      "publish":["github"],
+      "publish": [
+        "github"
+      ],
       "icon": "icon/icon.icns",
       "category": "public.app-category.developer-tools",
       "target": [
@@ -23,13 +26,17 @@
       ]
     },
     "win": {
-      "publish":["github"],
+      "publish": [
+        "github"
+      ],
       "icon": "icon/icon.ico",
       "certificateFile": "private/electronexample.p12",
       "verifyUpdateCodeSignature": false
     },
     "linux": {
-      "publish":["github"],
+      "publish": [
+        "github"
+      ],
       "icon": "icon",
       "category": "Development"
     }
@@ -47,6 +54,8 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "electron-log": "^2.2.13",
+    "electron-updater": "^2.18.2",
     "electron-window-state": "^4.1.1",
     "jquery": "^3.2.1"
   }

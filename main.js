@@ -3,6 +3,7 @@ const electron = require('electron');
 const mainWindow = require('./app/mainWindow.js');
 const menu = require('./app/menu.js')
 const notification = require('./app/notification.js')
+const updater = require('./updater.js')
 
 const {app, Menu} = electron;
 
@@ -17,6 +18,9 @@ app.on('ready', function () {
     Menu.setApplicationMenu(menu)
 
     notification({title: 'App', body: 'Ready'})
+
+    setTimeout(updater.check, 2000);
+
 });
 
 app.on('window-all-closed', function () {

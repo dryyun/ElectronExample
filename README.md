@@ -6,7 +6,7 @@ Tips: 主要是 Mac 上的方案，其他系统的也很容易 ，换个参数�
 Tips: 全部使用 yarn 包管理，而不是 npm 。  
 
 
-### 简易打包
+## 简易打包
 
 使用 [electron-packager](https://github.com/electron-userland/electron-packager) 生成可执行 .app 文件
 
@@ -20,7 +20,7 @@ Tips: 全部使用 yarn 包管理，而不是 npm 。
 > 
 > $ electron-installer-dmg ./ElectronExample-darwin-x64/ElectronExample.app   ElectronExample
 
-### 更全面的打包方案
+## 更全面的打包方案
 
 使用 [electron-builder](https://github.com/electron-userland/electron-builder) 
 
@@ -52,6 +52,14 @@ Tips: 全部使用 yarn 包管理，而不是 npm 。
 [Github Creating Releases](https://help.github.com/articles/creating-releases/)   
 
 > $ GH_TOKEN=`cat private/GH_TOKEN.txt` CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder build -m -p 'onTagOrDraft'    
+> OR
+> $ yarn publish-mac 
+
+#### Auto Updater
+[Electron Docs - AutoUpdater](https://electronjs.org/docs/api/auto-updater)  
+[Electron-Builder - AutoUpdate](https://www.electron.build/auto-update)  
+
+
 
 
 
