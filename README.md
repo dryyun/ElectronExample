@@ -31,18 +31,27 @@ Tips: 全部使用 yarn 包管理，而不是 npm 。
 
 #### 简单命令行调用
 
-[CLI 调用](https://www.electron.build/cli)
+[CLI 调用文档](https://www.electron.build/cli)
 
 > 开发者证书真贵呀，买不起。 
-> 默认是运行程序是要签名的，不过我们可以跳过签名这步 ，当然也可以签本地证书
-> $ CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder build -m zip    
-> OR
-> $ yarn build-mac
+> 默认是运行程序是要签名的，不过我们可以跳过签名这步 ，当然也可以签本地证书   
+> $ CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder build -m zip      
+> OR  
+> $ yarn build-mac  
 >
-> 运行生成 win 下的 exe 需要 .p12 证书
-> $ yarn build-win
+> 运行生成 win 下的 exe 需要 .p12 证书  
+> $ yarn build-win  
 
-#### 通过 package.json 配置
+#### 通过 package.json 配置  
 
-> $ yarn build-mac 
+> $ yarn build-mac   
+
+#### Publish Release  
+
+[Electron Builder Publish 文档](https://www.electron.build/configuration/publish)   
+[Github Creating Releases](https://help.github.com/articles/creating-releases/)   
+
+> $ GH_TOKEN=`cat private/GH_TOKEN.txt` CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder build -m -p 'onTagOrDraft'    
+
+
 

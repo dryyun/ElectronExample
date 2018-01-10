@@ -14,6 +14,7 @@
       "output": "dist"
     },
     "mac": {
+      "publish":["github"],
       "icon": "icon/icon.icns",
       "category": "public.app-category.developer-tools",
       "target": [
@@ -22,11 +23,13 @@
       ]
     },
     "win": {
+      "publish":["github"],
       "icon": "icon/icon.ico",
       "certificateFile": "private/electronexample.p12",
       "verifyUpdateCodeSignature": false
     },
     "linux": {
+      "publish":["github"],
       "icon": "icon",
       "category": "Development"
     }
