@@ -34,8 +34,13 @@ Tips: 全部使用 yarn 包管理，而不是 npm 。
 [CLI 调用](https://www.electron.build/cli)
 
 > 开发者证书真贵呀，买不起。 
-> 默认是运行程序是要签名的，不过我们可以跳过签名这步  
+> 默认是运行程序是要签名的，不过我们可以跳过签名这步 ，当然也可以签本地证书
 > $ CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder build -m zip    
+> OR
+> $ yarn build-mac
+>
+> 运行生成 win 下的 exe 需要 .p12 证书
+> $ yarn build-win
 
 #### 通过 package.json 配置
 

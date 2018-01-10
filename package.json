@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "NODE_ENV=development  electron .",
     "product": "NODE_ENV=production  electron .",
-    "build-mac": "CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder -m"
+    "build-mac": "CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder -m",
+    "build-win": "electron-builder -w"
   },
   "build": {
     "directories": {
@@ -16,14 +17,18 @@
       "icon": "icon/icon.icns",
       "category": "public.app-category.developer-tools",
       "target": [
+        "dmg",
         "zip"
       ]
     },
     "win": {
-      "icon": "icon/icon.ico"
+      "icon": "icon/icon.ico",
+      "certificateFile": "private/electronexample.p12",
+      "verifyUpdateCodeSignature": false
     },
     "linux": {
-      "icon": "icon"
+      "icon": "icon",
+      "category": "Development"
     }
   },
   "keywords": [
