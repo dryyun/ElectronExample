@@ -59,6 +59,7 @@ Tips: 全部使用 yarn 包管理，而不是 npm 。
 [Electron Docs - AutoUpdater](https://electronjs.org/docs/api/auto-updater)  
 [Electron-Builder - AutoUpdate](https://www.electron.build/auto-update)  
 
+`本来想做应用自身更新的，比较麻烦，就改为通知更新，去网页下载`
 
 
 
