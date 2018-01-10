@@ -36,7 +36,7 @@
     "Example"
   ],
   "author": "dryyun",
-  "license": "CC0-1.0",
+  "license": "MIT",
   "devDependencies": {
     "electron": "~1.7.8",
     "electron-builder": "^19.52.1",
